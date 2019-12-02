@@ -18,6 +18,9 @@ public class Shop {
 
     private String name;
 
+    @OneToMany(mappedBy = "vendor")
+    private List<MenuItem> menus = new ArrayList<>();
+
     protected Shop() {
     }
 
@@ -27,6 +30,10 @@ public class Shop {
         if (name.isEmpty()) {
             throw new InvalidShopNameException(name);
         }
+    }
+
+    public void addMenu(MenuItem menu) {
+        menus.add(menu);
     }
 
     public Long getId() {

@@ -9,10 +9,14 @@ import org.springframework.test.web.reactive.server.EntityExchangeResult;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Mono;
 
+import java.net.URI;
+
 import static com.woowacourse.caffeine.controller.ShopController.V1_SHOP;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ShopControllerTest {
+
+    private static final long DEFAULT_SHOP_ID = 100L;
 
     @Autowired
     private WebTestClient webTestClient;
@@ -31,7 +35,7 @@ public class ShopControllerTest {
                 .exchange()
                 .expectStatus().isCreated()
                 .expectHeader()
-                .valueMatches("Location", "\\/v1\\/shop\\/\\d*")
+                .valueMatches("Location", V1_SHOP + "/\\d*")
                 .expectBody().returnResult();
 
         // then
@@ -42,5 +46,16 @@ public class ShopControllerTest {
                 .expectBody()
                 .jsonPath("$.id").isNotEmpty()
                 .jsonPath("$.name").isEqualTo(name);
+    }
+
+    @Test
+    void menus_by_shop() {
+        // when & then
+        webTestClient.get()
+                .uri(String.format("%s/%d/menus", V1_SHOP, DEFAULT_SHOP_ID))
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody()
+                .jsonPath("$").isArray();
     }
 }
