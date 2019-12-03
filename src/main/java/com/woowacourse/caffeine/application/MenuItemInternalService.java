@@ -1,21 +1,28 @@
 package com.woowacourse.caffeine.application;
 
+import com.woowacourse.caffeine.domain.MenuItem;
 import com.woowacourse.caffeine.domain.Shop;
-import com.woowacourse.caffeine.repository.ShopRepository;
+import com.woowacourse.caffeine.repository.MenuItemRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
-class ShopInternalService {
-    private final ShopRepository shopRepository;
+public class MenuItemInternalService {
 
-    ShopInternalService(ShopRepository shopRepository) {
-        this.shopRepository = shopRepository;
+    private final ShopInternalService shopInternalService;
+
+    private final MenuItemRepository menuItemRepository;
+
+    public MenuItemInternalService(ShopInternalService shopInternalService, MenuItemRepository menuItemRepository) {
+        this.shopInternalService = shopInternalService;
+        this.menuItemRepository = menuItemRepository;
     }
 
-    Shop findById(long id) {
-        return shopRepository.findById(id)
-                .orElseThrow(() -> new ShopNotFoundException(id));
+    public List<MenuItem> findByShopId(long shopId) {
+        Shop vendor = shopInternalService.findById(shopId);
+        return menuItemRepository.findByVendor(vendor);
     }
 }

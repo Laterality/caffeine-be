@@ -33,7 +33,6 @@ public class ShopInternalServiceTest {
         Shop created = spy(new Shop(shopName));
 
         // when
-        when(created.getId()).thenReturn(1L);
         when(shopRepository.save(any())).thenReturn(created);
         Shop shop = shopService.createShop(request);
 
