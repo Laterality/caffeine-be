@@ -4,7 +4,7 @@ public class ShopResponse {
     public final long id;
     public final String name;
 
-    public ShopResponse(long id, String name) {
+    public ShopResponse(final long id, final String name) {
         this.id = id;
         this.name = name;
     }

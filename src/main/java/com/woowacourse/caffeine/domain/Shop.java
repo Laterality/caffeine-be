@@ -24,7 +24,7 @@ public class Shop {
     protected Shop() {
     }
 
-    public Shop(String name) {
+    public Shop(final String name) {
         this.name = Objects.requireNonNull(name);
 
         if (name.isEmpty()) {
@@ -32,7 +32,7 @@ public class Shop {
         }
     }
 
-    public void addMenu(MenuItem menu) {
+    public void addMenu(final MenuItem menu) {
         menus.add(menu);
     }
 

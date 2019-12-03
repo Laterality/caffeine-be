@@ -13,18 +13,18 @@ public class MenuItemService {
 
     private final MenuItemInternalService menuItemInternalService;
 
-    public MenuItemService(MenuItemInternalService menuItemInternalService) {
+    public MenuItemService(final MenuItemInternalService menuItemInternalService) {
         this.menuItemInternalService = menuItemInternalService;
     }
 
-    public List<MenuItemResponse> findByShopId(long shopId) {
+    public List<MenuItemResponse> findByShopId(final long shopId) {
         return menuItemInternalService.findByShopId(shopId)
                 .stream()
                 .map(this::convertToResponse)
                 .collect(Collectors.toList());
     }
 
-    private MenuItemResponse convertToResponse(MenuItem menuItem) {
+    private MenuItemResponse convertToResponse(final MenuItem menuItem) {
         return new MenuItemResponse(
                 menuItem.getId(),
                 menuItem.getName(),

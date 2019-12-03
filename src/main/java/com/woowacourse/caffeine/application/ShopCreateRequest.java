@@ -6,7 +6,7 @@ public class ShopCreateRequest {
     public ShopCreateRequest() {
     }
 
-    public ShopCreateRequest(String name) {
+    public ShopCreateRequest(final String name) {
         this.name = name;
     }
 
@@ -14,7 +14,7 @@ public class ShopCreateRequest {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 }

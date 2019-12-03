@@ -11,15 +11,15 @@ class ShopInternalService {
 
     private final ShopRepository shopRepository;
 
-    ShopInternalService(ShopRepository shopRepository) {
+    ShopInternalService(final ShopRepository shopRepository) {
         this.shopRepository = shopRepository;
     }
 
-    public Shop createShop(ShopCreateRequest request) {
+    public Shop createShop(final ShopCreateRequest request) {
         return shopRepository.save(new Shop(request.getName()));
     }
 
-    Shop findById(long id) {
+    Shop findById(final long id) {
         return shopRepository.findById(id)
                 .orElseThrow(() -> new ShopNotFoundException(id));
     }

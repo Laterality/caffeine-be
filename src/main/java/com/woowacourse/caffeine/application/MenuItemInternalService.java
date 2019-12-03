@@ -16,12 +16,12 @@ public class MenuItemInternalService {
 
     private final MenuItemRepository menuItemRepository;
 
-    public MenuItemInternalService(ShopInternalService shopInternalService, MenuItemRepository menuItemRepository) {
+    public MenuItemInternalService(final ShopInternalService shopInternalService, final MenuItemRepository menuItemRepository) {
         this.shopInternalService = shopInternalService;
         this.menuItemRepository = menuItemRepository;
     }
 
-    public List<MenuItem> findByShopId(long shopId) {
+    public List<MenuItem> findByShopId(final long shopId) {
         Shop vendor = shopInternalService.findById(shopId);
         return menuItemRepository.findByVendor(vendor);
     }

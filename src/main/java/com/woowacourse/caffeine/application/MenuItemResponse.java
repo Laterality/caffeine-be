@@ -6,7 +6,7 @@ public class MenuItemResponse {
     private final String description;
     private final int price;
 
-    public MenuItemResponse(long id, String name, String description, int price) {
+    public MenuItemResponse(final long id, final String name, final String description, final int price) {
         this.id = id;
         this.name = name;
         this.description = description;

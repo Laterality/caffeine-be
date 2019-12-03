@@ -10,6 +10,8 @@ import javax.persistence.ManyToOne;
 @Entity
 public class MenuItem {
 
+    public static final int PRICE_MIN_INCLUSIVE = 0;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -35,7 +37,7 @@ public class MenuItem {
             throw new InvalidMenuItemNameException(name);
         }
 
-        if (price < 0) {
+        if (price < PRICE_MIN_INCLUSIVE) {
             throw new InvalidMenuItemPriceException(price);
         }
     }

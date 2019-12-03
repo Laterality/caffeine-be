@@ -22,13 +22,13 @@ public class ShopController {
     private final ShopService shopService;
     private final MenuItemService menuItemService;
 
-    public ShopController(ShopService shopService, MenuItemService menuItemService) {
+    public ShopController(final ShopService shopService, final MenuItemService menuItemService) {
         this.shopService = shopService;
         this.menuItemService = menuItemService;
     }
 
     @PostMapping
-    public ResponseEntity createShop(@RequestBody ShopCreateRequest request) {
+    public ResponseEntity createShop(@RequestBody final ShopCreateRequest request) {
         ShopResponse created = shopService.createShop(request);
 
         return ResponseEntity.created(URI.create(V1_SHOP + "/" + created.id))
@@ -36,14 +36,14 @@ public class ShopController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity retrieveShop(@PathVariable long id) {
+    public ResponseEntity retrieveShop(@PathVariable final long id) {
         ShopResponse found = shopService.findById(id);
 
         return ResponseEntity.ok(found);
     }
 
     @GetMapping("/{id}/menus")
-    public ResponseEntity retrieveMenus(@PathVariable long id) {
+    public ResponseEntity retrieveMenus(@PathVariable final long id) {
         return ResponseEntity.ok(menuItemService.findByShopId(id));
     }
 }
