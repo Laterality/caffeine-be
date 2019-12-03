@@ -1,5 +1,6 @@
 package com.woowacourse.caffeine.domain;
 
+import com.woowacourse.caffeine.domain.exception.InvalidShopNameException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;

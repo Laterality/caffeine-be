@@ -1,6 +1,6 @@
 package com.woowacourse.caffeine.controller;
 
-import com.woowacourse.caffeine.application.ShopCreateRequest;
+import com.woowacourse.caffeine.application.object.ShopCreateRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

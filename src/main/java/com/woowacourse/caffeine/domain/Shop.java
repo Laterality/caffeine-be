@@ -1,5 +1,7 @@
 package com.woowacourse.caffeine.domain;
 
+import com.woowacourse.caffeine.domain.exception.InvalidShopNameException;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

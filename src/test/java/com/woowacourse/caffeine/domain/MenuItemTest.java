@@ -1,5 +1,7 @@
 package com.woowacourse.caffeine.domain;
 
+import com.woowacourse.caffeine.domain.exception.InvalidMenuItemNameException;
+import com.woowacourse.caffeine.domain.exception.InvalidMenuItemPriceException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;

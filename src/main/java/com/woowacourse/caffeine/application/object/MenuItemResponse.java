@@ -1,4 +1,4 @@
-package com.woowacourse.caffeine.application;
+package com.woowacourse.caffeine.application.object;
 
 public class MenuItemResponse {
     private final long id;

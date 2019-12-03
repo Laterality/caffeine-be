@@ -1,4 +1,4 @@
-package com.woowacourse.caffeine.application;
+package com.woowacourse.caffeine.application.exception;
 
 public class ShopNotFoundException extends RuntimeException {
 

@@ -1,4 +1,4 @@
-package com.woowacourse.caffeine.domain;
+package com.woowacourse.caffeine.domain.exception;
 
 public class InvalidShopNameException extends RuntimeException {
 

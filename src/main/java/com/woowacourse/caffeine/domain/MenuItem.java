@@ -1,5 +1,8 @@
 package com.woowacourse.caffeine.domain;
 
+import com.woowacourse.caffeine.domain.exception.InvalidMenuItemNameException;
+import com.woowacourse.caffeine.domain.exception.InvalidMenuItemPriceException;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
