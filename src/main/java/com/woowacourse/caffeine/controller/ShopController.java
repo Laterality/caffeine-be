@@ -17,6 +17,7 @@ import java.net.URI;
 @RestController
 @RequestMapping(ShopController.V1_SHOP)
 public class ShopController {
+
     public static final String V1_SHOP = "/v1/shop";
 
     private final ShopService shopService;

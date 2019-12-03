@@ -1,6 +1,7 @@
 package com.woowacourse.caffeine.application.object;
 
 public class ShopCreateRequest {
+
     private String name;
 
     public ShopCreateRequest() {

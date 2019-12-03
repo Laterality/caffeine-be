@@ -1,6 +1,7 @@
 package com.woowacourse.caffeine.application.object;
 
 public class MenuItemResponse {
+
     private final long id;
     private final String name;
     private final String description;

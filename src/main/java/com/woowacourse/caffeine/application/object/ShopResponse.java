@@ -1,6 +1,7 @@
 package com.woowacourse.caffeine.application.object;
 
 public class ShopResponse {
+
     public final long id;
     public final String name;
 

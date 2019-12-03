@@ -1,6 +1,7 @@
 package com.woowacourse.caffeine.controller;
 
 import com.woowacourse.caffeine.application.object.ShopCreateRequest;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,6 +21,7 @@ public class ShopControllerTest {
     private WebTestClient webTestClient;
 
     @Test
+    @DisplayName("상점 생성")
     void create_shop() {
         // given
         String name = "어디야 커피";
@@ -47,6 +49,7 @@ public class ShopControllerTest {
     }
 
     @Test
+    @DisplayName("상점 별 메뉴 목록 조회")
     void menus_by_shop() {
         // when & then
         webTestClient.get()

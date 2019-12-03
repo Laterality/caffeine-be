@@ -13,7 +13,6 @@ import java.util.List;
 public class MenuItemInternalService {
 
     private final ShopInternalService shopInternalService;
-
     private final MenuItemRepository menuItemRepository;
 
     public MenuItemInternalService(final ShopInternalService shopInternalService, final MenuItemRepository menuItemRepository) {
