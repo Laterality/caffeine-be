@@ -13,18 +13,17 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class ShopServiceTest {
+public class ShopInternalServiceTest {
 
     @Mock
     private ShopRepository shopRepository;
 
     @InjectMocks
-    private ShopService shopService;
+    private ShopInternalService shopService;
 
     @Test
     void create() {
@@ -36,7 +35,7 @@ public class ShopServiceTest {
         // when
         when(created.getId()).thenReturn(1L);
         when(shopRepository.save(any())).thenReturn(created);
-        ShopResponse shop = shopService.createShop(request);
+        Shop shop = shopService.createShop(request);
 
         // then
         assertThat(shop.getName()).isEqualTo(shopName);
