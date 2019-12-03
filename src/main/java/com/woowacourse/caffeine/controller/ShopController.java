@@ -30,9 +30,9 @@ public class ShopController {
 
     @PostMapping
     public ResponseEntity createShop(@RequestBody final ShopCreateRequest request) {
-        ShopResponse created = shopService.createShop(request);
+        ShopResponse createdShop = shopService.createShop(request);
 
-        return ResponseEntity.created(URI.create(V1_SHOP + "/" + created.id))
+        return ResponseEntity.created(URI.create(V1_SHOP + "/" + createdShop.id))
                 .build();
     }
 
