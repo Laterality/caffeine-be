@@ -30,8 +30,8 @@ public class NotificationController {
     }
 
     @PostMapping("/notification/send/shop")
-    public ResponseEntity sendShopNotification(long shopId, String message) {
-        shopNotificationService.send(shopId, message);
+    public ResponseEntity sendShopNotification(ShopNotificationSendRequest request) {
+        shopNotificationService.send(request.getShopId(), request.getMessage());
         return ResponseEntity.ok().build();
     }
 
