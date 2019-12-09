@@ -6,24 +6,24 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
-public class ShopNotificationServiceTest {
+public class NotificationServiceTest {
 
-    private ShopNotificationService shopNotificationService;
+    private NotificationService<Long> notificationService;
 
     @BeforeEach
     void setUp() {
-        shopNotificationService = new ShopNotificationService();
+        notificationService = new NotificationService<>();
     }
 
     @Test
     void subscribe() {
-        assertDoesNotThrow(() -> assertThat(shopNotificationService.subscribe(1)).isNotNull());
+        assertDoesNotThrow(() -> assertThat(notificationService.subscribe(1L)).isNotNull());
     }
 
     @Test
     void send() {
-        shopNotificationService.subscribe(1);
-        assertDoesNotThrow(() -> shopNotificationService.send(1, "{\n" +
+        notificationService.subscribe(1L);
+        assertDoesNotThrow(() -> notificationService.send(1L, "{\n" +
                 "    \"topic\": \"orderArrived\",\n" +
                 "    \"data\": {\n" +
                 "        \"id\": 1,\n" +
