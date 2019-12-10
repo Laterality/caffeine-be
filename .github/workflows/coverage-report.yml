@@ -1,4 +1,4 @@
-name: Code coverage report
+name: Report code coverage
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Generate code coverage report
+      - name: Generate report
         run: ./gradlew clean test jacocoTestReport
       - uses: codecov/codecov-action@v1
         name: Upload report
