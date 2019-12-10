@@ -6,13 +6,13 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter
 @Service
 public class CustomerNotificationService {
 
-    private NotificationService<String> notificationService = new NotificationService<>();
+    private final NotificationInternalService<String> notificationInternalService = new NotificationInternalService<>();
 
     public ResponseBodyEmitter subscribe(final String customerId) {
-        return notificationService.subscribe(customerId);
+        return notificationInternalService.subscribe(customerId);
     }
 
-    public void send(final String customerid, final String message) {
-        notificationService.send(customerid, message);
+    public void send(final String customerId, final String message) {
+        notificationInternalService.send(customerId, message);
     }
 }
