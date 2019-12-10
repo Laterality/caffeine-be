@@ -1,0 +1,22 @@
+name: Code coverage report
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Generate code coverage report
+        run: ./gradlew clean test jacocoTestReport
+      - uses: codecov/codecov-action@v1
+        name: Upload report
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./build/reports/jacoco/report.xml
+          name: codecov-umbrella
+          fail_ci_if_error: true
