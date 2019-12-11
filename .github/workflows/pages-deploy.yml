@@ -20,5 +20,5 @@ jobs:
         with:
           ACCESS_TOKEN: ${{ secrets.GH_PAGES_DEPLOY_ACCESS_TOKEN }}
           BASE_BRANCH: develop
-          BRANCH: docs
+          BRANCH: gh-pages
           FOLDER: build/asciidoc/html5
