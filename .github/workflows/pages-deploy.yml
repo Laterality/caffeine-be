@@ -16,7 +16,7 @@ jobs:
       - name: Generate document
         run: ./gradlew asciidoctor
       - name: Deploy Github Pages
-        uses: JamesIves/github-pages-deploy-action@release/v3
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.GH_PAGES_DEPLOY_ACCESS_TOKEN }}
           BASE_BRANCH: develop
