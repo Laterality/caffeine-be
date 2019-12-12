@@ -2,13 +2,16 @@ package com.woowacourse.caffeine.application.dto;
 
 public class MenuItemResponse {
 
-    private final long id;
-    private final String name;
-    private final String nameInEnglish;
-    private final String description;
-    private final int price;
-    private final String image;
-    private final String category;
+    private long id;
+    private String name;
+    private String nameInEnglish;
+    private String description;
+    private int price;
+    private String image;
+    private String category;
+
+    public MenuItemResponse() {
+    }
 
     public MenuItemResponse(final long id, final String name, final String nameInEnglish, final String description, final int price, final String image, final String category) {
         this.id = id;

@@ -4,9 +4,12 @@ import java.util.List;
 
 public class OrderResponse {
 
-    private final long id;
-    private final String status;
-    private final List<MenuItemResponse> orderItems;
+    private long id;
+    private String status;
+    private List<MenuItemResponse> orderItems;
+
+    public OrderResponse() {
+    }
 
     public OrderResponse(final long id, final String status, final List<MenuItemResponse> orderItems) {
         this.id = id;
